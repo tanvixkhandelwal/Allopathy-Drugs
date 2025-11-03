@@ -1,0 +1,90 @@
+# =========================================
+# 💊 Allopathy Drugs Project – .gitignore
+# =========================================
+
+# Power BI
+*.pbix.tmp
+*.pbix.backup
+*.pbit
+*.pbix.refresh
+~$*.pbix
+*.pbit.lock
+*.query
+*.data
+*.cache
+*.rdl
+*.rpt
+*.bim
+*.bism
+
+# Excel / CSV temporary & autosave files
+~$*.xls*
+*.xlsx.lock
+*.tmp
+*.bak
+*.backup
+*.old
+*.log
+*.DS_Store
+
+# SQL / database artifacts
+*.ldf
+*.mdf
+*.ndf
+*.bak
+*.sqlproj
+*.dbmdl
+*.dacpac
+*.bacpac
+*.rdl.data
+*.suo
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.lnk
+*.swp
+*.swo
+
+# Visual Studio / VS Code
+.vscode/
+.idea/
+*.user
+*.sln.docstates
+*.vs/
+*.vscode/
+*.code-workspace
+
+# Node / Python (if you ever expand)
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Output folders
+/bin/
+/obj/
+/build/
+/dist/
+/out/
+
+# Environment / secrets
+.env
+*.key
+*.cert
+*.json
+*.yml
+*.yaml
+
+# Archive files
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# =========================================
+# End of file
+# =========================================
