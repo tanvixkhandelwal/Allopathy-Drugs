@@ -55,6 +55,27 @@ Introductory page with project title and theme.
 - Slicer: Manufacturer Name Filter  
 
 ---
+## 📊 Dashboard Preview
+
+
+### Title Page  
+![Title Page](images/Title%20Page.png)
+
+### Price Distribution and Market Analysis
+![Executive Overview](images/Page2.%20Executive%20Overview.png)
+
+### Catalogue Insights  
+![Catalogue Insights](images/Page3.%20Catalogue%20Insights.png)
+
+### Consumption & Engagement  
+![Consumption & Engagement](images/Page4.%20Consumption%20and%20Engagement.png)
+
+### Ratings & Feedback  
+![Ratings & Feedback](images/Page5.%20Ratings%20and%20Feedback.png)
+
+### Actionable Insights  
+![Actionable Insights](images/Page6.%20Actionable%20Insights.png)
+
 
 ## Insights
 - Wide **price variation** across manufacturers and pack sizes  
@@ -70,5 +91,15 @@ Introductory page with project title and theme.
 3. Refresh visuals and explore dashboard pages using filters and slicers.  
 
 ---
+##  Contact  
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tanvikhandelwal30)  [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:tanvikhandelwal14@gmail.com)  
+
+
+
+![SQL Server](https://img.shields.io/badge/SQL%20Server-TSQL-blue?logo=microsoftsqlserver&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-DAX-yellow?logo=powerbi&logoColor=white)
+![Excel](https://img.shields.io/badge/Excel-Advanced-green?logo=microsoftexcel&logoColor=white)
+
 
 
