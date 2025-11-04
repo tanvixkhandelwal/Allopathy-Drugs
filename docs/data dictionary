@@ -1,0 +1,116 @@
+# 📘 Data Dictionary — Allopathy Drugs in India
+
+This data dictionary explains all fields used in the **Allopathy Drugs in India – SQL + Power BI Project**,  
+including both the **raw dataset columns** and the **derived analytical fields** created through SQL views.
+
+---
+
+## 🧾 Base Dataset (Raw Data)
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **id** | INT | Unique identifier for each drug/product record. | 101245 |
+| **name** | VARCHAR | Official or marketed name of the drug/product. | Paracetamol 500mg Tablet |
+| **price** | DECIMAL(10,2) | Price per unit/pack as listed in the dataset. May contain zero or null values. | 32.50 |
+| **is_discontinued** | BIT / INT | Product status flag — 0 = Active, 1 = Discontinued. | 0 |
+| **manufacturer_name** | VARCHAR | Name of the company/manufacturer producing the drug. | Cipla Ltd |
+| **type** | VARCHAR | Drug type — Allopathy, Ayurvedic, or Homeopathic. | Allopathy |
+| **pack_size_label** | VARCHAR | Packaging size or label (e.g., 10 Tablets, 100 ml Bottle). | 10 Tablets |
+| **short_composition1** | VARCHAR | Primary active composition/ingredient. | Paracetamol |
+| **short_composition2** | VARCHAR | Secondary or additional composition/ingredient (if any). | Caffeine |
+
+---
+
+## 🧮 Derived Columns (SQL Transformations in `base` View)
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **price** | DECIMAL(18,2) | Cleaned and converted numeric price from raw data using `TRY_CONVERT`. | 25.00 |
+| **sc1** | VARCHAR | Trimmed and cleaned value of `short_composition1`. | Paracetamol |
+| **sc2** | VARCHAR | Trimmed and cleaned value of `short_composition2`. | Caffeine |
+
+---
+
+## 🔗 `composition_pairs` View
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **id** | INT | Drug/product ID linked to base dataset. | 101245 |
+| **manufacturer_name** | VARCHAR | Manufacturer associated with the drug. | Cipla Ltd |
+| **composition_pair** | VARCHAR | Combined pair of active ingredients, ordered alphabetically for consistency. | Caffeine, Paracetamol |
+
+---
+
+## ⚖️ `active_vs_inactive` View
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **manufacturer_name** | VARCHAR | Manufacturer name. | Sun Pharma |
+| **total_products** | INT | Total number of products by the manufacturer. | 210 |
+| **active_count** | INT | Count of active (non-discontinued) products. | 180 |
+| **discontinued_count** | INT | Count of discontinued products. | 30 |
+| **active_rate** | DECIMAL(5,2) | Percentage of active products. | 85.71 |
+| **discontinued_rate** | DECIMAL(5,2) | Percentage of discontinued products. | 14.29 |
+
+---
+
+## 🧪 `all_compositions` View
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **composition** | VARCHAR | Flattened list of all compositions (from both `short_composition1` and `short_composition2`). | Amoxicillin |
+
+---
+
+## 🏭 Manufacturer Analysis Table (Aggregated)
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **manufacturer_name** | VARCHAR | Company or manufacturer name. | Torrent Pharmaceuticals |
+| **avg_price** | DECIMAL(10,2) | Average product price per manufacturer. | 48.75 |
+| **min_price** | DECIMAL(10,2) | Minimum product price for that manufacturer. | 3.50 |
+| **max_price** | DECIMAL(10,2) | Maximum product price for that manufacturer. | 265.00 |
+| **item_count** | INT | Total number of products listed. | 154 |
+| **manufacturer_diversity** | INT | Count of distinct composition pairs offered. | 27 |
+
+---
+
+## 📦 Pack Size Analysis
+| Column Name | Data Type | Description | Example |
+|--------------|------------|-------------|----------|
+| **pack_size_label** | VARCHAR | Label representing packaging unit or dosage count. | 10 Tablets |
+| **average_price** | DECIMAL(10,2) | Average price of drugs under the given pack size. | 55.60 |
+| **items_count** | INT | Total number of products for the given pack size. | 1425 |
+
+---
+
+## 🧰 Summary of Relationships
+| Relationship | Description |
+|---------------|-------------|
+| **base → composition_pairs** | One-to-one (based on drug `id`) |
+| **base → active_vs_inactive** | One-to-many (grouped by `manufacturer_name`) |
+| **composition_pairs → manufacturer_diversity** | Aggregated by `manufacturer_name` |
+| **base → pack_size_label** | One-to-many for pack size analysis |
+
+---
+
+## 🗂️ Data Coverage
+| Category | Count / Range |
+|-----------|----------------|
+| Total Products | 253,793 |
+| Unique Manufacturers | ~5,000+ |
+| Distinct Compositions | ~7,000+ |
+| Price Range | ₹0.50 – ₹20,000+ |
+| Pack Sizes | 10 Tablets, 100 ml Bottle, 1 Strip, etc. |
+| Active vs Discontinued Ratio | ~85% Active : 15% Discontinued |
+
+---
+
+## 📄 Notes
+- Null and zero prices were excluded from analytical calculations.  
+- Composition combinations are alphabetically ordered to prevent duplicates.  
+- Manufacturer diversity represents the **breadth of unique formulation pairs** per company.  
+- Pack size trends were evaluated only for records with valid price data.
+
+---
+
+✅ **Total Columns (Raw + Derived):** 20+  
+✅ **Total Views Created:** `base`, `composition_pairs`, `active_vs_inactive`, `all_compositions`  
+✅ **Database Engine:** Microsoft SQL Server  
+✅ **Visualization Layer:** Power BI  
+
+---
