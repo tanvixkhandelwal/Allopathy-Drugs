@@ -83,6 +83,13 @@ Introductory page with project title and theme.
 3. Refresh visuals and explore dashboard pages using filters and slicers.  
 
 ---
+## 📘 Project Resources  
+
+- [📖 Data Dictionary](./data_dictionary.md)  
+- [📄 Power BI Dashboard (PDF)](./Allopathy_Drugs_Dashboard.pdf)
+- [🗂️ View SQL Analysis Script](./sql/allopathy_drugs_analysis.sql)
+
+
 ##  Contact  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/tanvikhandelwal30)  [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:tanvikhandelwal14@gmail.com)  
