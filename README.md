@@ -59,22 +59,14 @@ Introductory page with project title and theme.
 
 
 ### Title Page  
-![Title Page](images/Title%20Page.png)
+![Title Page](Images/Title%20Page.png)
 
 ### Price Distribution and Market Analysis
-![Executive Overview](images/Page2.%20Executive%20Overview.png)
+![Price Distribution and Market Analysis](Images/Price%20Distribution%20and%20Market%20Analysis.png)
 
-### Catalogue Insights  
-![Catalogue Insights](images/Page3.%20Catalogue%20Insights.png)
+### Manufacturer Analysis
+![Manufacturer Analysis](Images/Manufacturer%20Analysis.png)
 
-### Consumption & Engagement  
-![Consumption & Engagement](images/Page4.%20Consumption%20and%20Engagement.png)
-
-### Ratings & Feedback  
-![Ratings & Feedback](images/Page5.%20Ratings%20and%20Feedback.png)
-
-### Actionable Insights  
-![Actionable Insights](images/Page6.%20Actionable%20Insights.png)
 
 
 ## Insights
